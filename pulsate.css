@@ -1,0 +1,81 @@
+/*
+Coyright 2016, Daniel Marcus 
+daniel.marcus@gmail.com
+*/
+.pulsate {
+  box-sizing:border-box;
+  box-shadow: 0px 0px 1px 2px red;
+  height: 60px;    
+  width: 60px;
+  border-radius: 50%;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transform: rotateX(55deg);
+  -moz-transform: rotateX(55deg);
+  transform: rotateX(55deg);
+  -webkit-animation: pulse 2s ease 2s 3;
+  -moz-animation: pulse 2s ease 2s 3;
+  animation: pulse 2s ease 2s 3;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+
+}
+
+/* ANIMATIONS */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  }
+ 50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  } 
+ 50% {
+     opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+     opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0;
+  } 
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,80 @@
+<html>
+<head>
+
+<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+<script src="mlabel.js"></script>
+<script type="text/javascript" src="geomap.css.js"></script>
+<script type="text/javascript" src="mcomet.js"></script>
+<link rel="stylesheet" href="pulsate.css">
+
+</head>
+<body>
+
+<div id="map-canvas" style="height:100%;width:100%;margin: 0px;padding: 0px; display:block;"></div>
+
+<script>
+
+  /*
+  * initialize stylized map
+  */
+  var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+  var mapOptions = {
+          center: new google.maps.LatLng(40.710688, -70.967983),
+          zoom: 2,
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+          } 
+        };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+  
+
+  /*
+  * initialize comets
+  */
+  var comet1 = new Comet(map);
+  comet1.lat1= 40.714;
+  comet1.lng1= -74.006;
+  comet1.lat2= -7.957660;
+  comet1.lng2= 22.857992;
+  comet1.cometFillColor='lawngreen';
+  comet1.markerFillColor= 'lawngreen';
+  comet1.cometStrokeColor='seagreen';
+  comet1.markerStrokeColor='seagreen';
+  comet1.cometSpeed= 1;
+  comet1.aniRepeat= true;
+  comet1.start();
+
+  var comet2 = new Comet(map);
+  comet2.lat1 =  60.377685;
+  comet2.lng1 =  76.822836;
+  comet2.lat2 = -25.169074;
+  comet2.lng2 = 144.949989;
+  comet2.cometFillColor ='deepskyblue';
+  comet2.markerFillColor = 'deepskyblue';
+  comet2.cometStrokeColor ='dodgerblue';
+  comet2.markerStrokeColor ='dodgerblue';
+  comet2.cometSpeed =  5;
+  comet2.aniRepeat= false;
+  comet2.cometRemove = true;
+  comet2.start();
+
+
+  var comet3 = new Comet(map);
+  comet3.lat1= 80.714;
+  comet3.lng1= -4.006;
+  comet3.lat2= 7.957660;
+  comet3.lng2= 2.857992;
+  comet3.cometFillColor='red';
+  comet3.markerFillColor= 'red';
+  comet3.cometStrokeColor='purple';
+  comet3.markerStrokeColor='purple';
+  comet3.cometSpeed= 15;
+  comet3.aniRepeat= true;
+  comet3.start();
+
+</script>
+</body>
